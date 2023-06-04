@@ -18,5 +18,14 @@
         <action
             android:id="@+id/action_loggedInFragment_to_loginRegisterFragment"
             app:destination="@id/loginRegisterFragment" />
+        <action
+            android:id="@+id/action_loggedInFragment_to_ComplectFragment"
+            app:destination="@id/ComplectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ComplectFragment"
+        android:name="com.example.myapplication.view.ComplectFragment"
+        android:label="ComplectFragment">
+
     </fragment>
 </navigation>

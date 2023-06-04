@@ -16,10 +16,15 @@ import java.util.List;
 
 public class ComplectAdapter extends RecyclerView.Adapter<ComplectAdapter.ViewHolder>
 {
+    public interface OnComplectClickListener{
+        void onComplectClick(Complect state, int position);
+    }
+    private final OnComplectClickListener onClickListener;
     private LayoutInflater inflater;
     private List<Complect> complects;
 
-    public ComplectAdapter(List<Complect> states, Context context) {
+    public ComplectAdapter(List<Complect> states, Context context,OnComplectClickListener onClickListener) {
+        this.onClickListener = onClickListener;
         inflater=LayoutInflater.from(context);
         this.complects = states;
     }
@@ -34,7 +39,13 @@ public class ComplectAdapter extends RecyclerView.Adapter<ComplectAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Complect complect = complects.get(position);
-        holder.name_complect.setText("Комплект "+position);
+        holder.name_complect.setText("Комплект "+(position+1));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickListener.onComplectClick(complect,position);
+            }
+        });
     }
 
     @Override

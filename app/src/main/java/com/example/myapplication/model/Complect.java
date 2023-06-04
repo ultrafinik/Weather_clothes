@@ -1,6 +1,8 @@
 package com.example.myapplication.model;
 
-public class Complect
+import java.io.Serializable;
+
+public class Complect implements Serializable
 {
     private int temp1;
     private int temp2;
@@ -87,4 +89,5 @@ public class Complect
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

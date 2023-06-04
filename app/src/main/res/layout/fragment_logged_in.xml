@@ -36,7 +36,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="17"
                 android:textSize="120sp"/>
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
