@@ -5,10 +5,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.myapplication.R;
@@ -18,6 +20,8 @@ import com.squareup.picasso.Picasso;
 public class ComplectFragment extends Fragment {
     private Complect complect;
     private ImageView footwearImage,headerImage, outwearImage,pantsImage,shirtImage;
+    private Button ok_button;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +38,19 @@ public class ComplectFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_complect, container, false);
+        footwearImage = view.findViewById(R.id.footwear_image);
+        headerImage = view.findViewById(R.id.headgear_image);
+        outwearImage = view.findViewById(R.id.outerwear_image);
+        pantsImage = view.findViewById(R.id.pants_image);
+        shirtImage = view.findViewById(R.id.shirt_image);
+        ok_button=view.findViewById(R.id.ok_button);
+        ok_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getView()).navigate(R.id.action_ComplectFragment_to_loggedInFragment);
+            }
+        });
         if(complect!=null) {
-            footwearImage = view.findViewById(R.id.footwear_image);
-            headerImage = view.findViewById(R.id.headgear_image);
-            outwearImage = view.findViewById(R.id.outerwear_image);
-            pantsImage = view.findViewById(R.id.pants_image);
-            shirtImage = view.findViewById(R.id.shirt_image);
             if (!complect.getFootwear().equals("")) {
                 footwearImage.setVisibility(View.VISIBLE);
                 Picasso.get().load(complect.getFootwear()).into(footwearImage);

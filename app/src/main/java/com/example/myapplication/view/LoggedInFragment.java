@@ -11,6 +11,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -78,6 +79,7 @@ public class LoggedInFragment extends Fragment {
                 Navigation.findNavController(getView()).navigate(R.id.action_loggedInFragment_to_ComplectFragment);
             }
         };
+        getGeoLocation();
         getCloses();
         loggedInViewModel.getLoggedOutLiveData().observe(this, new Observer<Boolean>() {
             @Override
@@ -146,7 +148,7 @@ public class LoggedInFragment extends Fragment {
                         location.getLongitude(), 1);
                 town = addresses.get(0).getLocality();
                 city.setText(town);
-                NetworkService.getInstance().getJSONApi().getWeatherByCity(town, NetworkService.KEY, "metric", "ru").
+                NetworkService.getInstance().getJSONApi().getWeatherByCity("Калининград", NetworkService.KEY, "metric", "ru").
                         enqueue(new Callback<WeatherAll>() {
                             @Override
                             public void onResponse(Call<WeatherAll> call, Response<WeatherAll> response) {

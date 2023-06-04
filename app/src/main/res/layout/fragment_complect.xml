@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backcolor"
     tools:context=".view.MainActivity">
 
     <LinearLayout
@@ -21,18 +22,22 @@
             android:id="@+id/button_footwear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/footwear"
+            android:text="Обувь"
+            android:backgroundTint="@color/buttoncolor"
             />
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/headgear_image"
             android:visibility="gone"/>
+
+
         <Button
             android:id="@+id/button_headger"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/headger"/>
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Головной убор"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +47,8 @@
             android:id="@+id/button_outerwear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/outerwear"/>
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Верхняя одежда"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +58,8 @@
             android:id="@+id/button_pants"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pants"
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Низ"
             />
         <ImageView
             android:layout_width="match_parent"
@@ -63,6 +70,16 @@
             android:id="@+id/button_shirt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/shirt"/>
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Вверх"/>
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/extrabuttoncolor"
+            android:text="Назад"
+            />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

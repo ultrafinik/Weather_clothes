@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:gravity="center"
+    android:background="@color/backcolor"
     >
     <EditText
         android:id="@+id/fragment_loginregister_email"
@@ -27,12 +28,14 @@
         android:id="@+id/fragment_loginregister_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:backgroundTint="@color/buttoncolor"/>
 
     <Button
         android:id="@+id/fragment_loginregister_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register" />
+        android:text="Register"
+        android:backgroundTint="@color/buttoncolor"/>
 
 </LinearLayout>

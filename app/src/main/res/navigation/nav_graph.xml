@@ -26,6 +26,9 @@
         android:id="@+id/ComplectFragment"
         android:name="com.example.myapplication.view.ComplectFragment"
         android:label="ComplectFragment">
+        <action
+            android:id="@+id/action_ComplectFragment_to_loggedInFragment"
+            app:destination="@id/loggedInFragment" />
 
     </fragment>
 </navigation>

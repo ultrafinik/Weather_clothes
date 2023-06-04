@@ -1,6 +1,7 @@
 package com.example.myapplication.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.databinding.BindingAdapter;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
     }
     @Override
